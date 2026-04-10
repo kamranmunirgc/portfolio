@@ -5,124 +5,156 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Kamran Munir Portfolio</title>
 
+<!-- ICON LIBRARY -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 <style>
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(to bottom, #0f172a, #020617);
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #020617, #0f172a);
     color: white;
-}
-
-.container {
-    width: 90%;
-    margin: auto;
 }
 
 /* HEADER */
 .header {
     text-align: center;
-    padding: 40px 0;
+    padding: 50px 20px;
 }
 
 .header h1 {
+    font-size: 40px;
     color: #38bdf8;
 }
 
-.links a {
+.header p {
+    max-width: 700px;
+    margin: auto;
+    color: #cbd5f5;
+}
+
+/* CONTACT */
+.contact {
+    margin-top: 20px;
+}
+
+.contact a {
     margin: 10px;
-    color: #22c55e;
+    padding: 10px 15px;
+    border-radius: 8px;
+    background: #1e293b;
+    color: white;
     text-decoration: none;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.contact a:hover {
+    background: #38bdf8;
 }
 
 /* SECTION */
 .section {
-    margin-top: 40px;
+    padding: 40px 20px;
 }
 
 .section h2 {
-    color: #22d3ee;
     text-align: center;
+    color: #22d3ee;
 }
 
-/* CARD GRID */
+/* GRID */
 .grid {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 20px;
-    justify-content: center;
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
+/* CARD */
 .card {
     background: #1e293b;
-    border-radius: 10px;
+    border-radius: 15px;
     padding: 15px;
-    width: 180px;
     text-align: center;
     transition: 0.3s;
 }
 
 .card:hover {
-    transform: scale(1.05);
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 0 20px #38bdf8;
 }
 
 .card img {
     width: 100px;
-    border-radius: 10px;
+    border-radius: 15px;
 }
 
 .card a {
     display: block;
     margin-top: 10px;
+    padding: 6px;
     background: black;
-    padding: 5px;
-    border-radius: 5px;
+    border-radius: 6px;
     color: white;
     text-decoration: none;
+}
+
+/* FADE ANIMATION */
+.fade {
+    animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
 }
 </style>
 </head>
 
 <body>
 
-<div class="container">
-
 <!-- HEADER -->
-<div class="header">
+<div class="header fade">
     <h1>Kamran Munir</h1>
-    <p>Unity Game Developer</p>
+    <h3>Unity Game Developer</h3>
 
-    <div class="links">
-        <a href="mailto:shkamran730@gmail.com">Email</a>
-        <a href="http://linkedin.com/in/kamran-munir-341967325">LinkedIn</a>
-        <a href="tel:03488226246">Call</a>
+    <p>
+    Game Developer with 3+ years of experience in Android, iOS, and Amazon Fire TV games.
+    Specialized in FPS, TPS, hyper-casual, and simulation games with Ads, Firebase, and optimization.
+    </p>
+
+    <div class="contact">
+        <a href="mailto:shkamran730@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>
+        <a href="https://linkedin.com/in/kamran-munir-341967325"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+        <a href="https://wa.me/923488226246"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
     </div>
 
-    <p>📍 Canal Park Gulberg 2, Lahore</p>
+    <p>📞 +92 348 8226246 • 📍 Lahore, Pakistan</p>
 </div>
 
 <!-- IOS -->
-<div class="section">
+<div class="section fade">
 <h2>📱 iOS Games</h2>
 <div class="grid">
 
 <div class="card">
-<img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/f4/43/fd/f443fd0c-f523-914a-dbe3-e7d5fbf4c26f/AppIcon.png">
+<img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/f4/43/fd/f443fd0c-f523-914a-dbe3-e7d5fbf4c26f/AppIcon-0-0-1x_U007emarketing-0-0-0-0-85-220.png">
 <a href="https://apps.apple.com/hu/app/water-fun-park-manager-3d/id6753354884">View</a>
 </div>
 
 <div class="card">
-<img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/57/4a/39/574a398d-7c11-45b5-756f-3d054d1e52e5/AppIcon.png">
+<img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/57/4a/39/574a398d-7c11-45b5-756f-3d054d1e52e5/AppIcon-0-0-1x_U007emarketing-0-0-0-0-85-220.png">
 <a href="https://apps.apple.com/hu/app/fps-fire-survival-shooter-gun/id6749795186">View</a>
 </div>
 
 <div class="card">
-<img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/7f/e8/d2/7fe8d2ac-1dd5-54d5-fb2e-e93bcabe7f21/AppIcon.png">
+<img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/7f/e8/d2/7fe8d2ac-1dd5-54d5-fb2e-e93bcabe7f21/AppIcon-0-0-1x_U007emarketing-0-0-0-0-85-220.png">
 <a href="https://apps.apple.com/hu/app/kite-shop-manager-simulator/id6758148786">View</a>
 </div>
 
 <div class="card">
-<img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/1e/1b/e0/1e1be085-afd5-2c45-6cde-5a712872c522/AppIcon.png">
+<img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/1e/1b/e0/1e1be085-afd5-2c45-6cde-5a712872c522/AppIcon-0-0-1x_U007emarketing-0-0-0-0-85-220.png">
 <a href="https://apps.apple.com/pk/app/mall-manager-simulator/id6755783425">View</a>
 </div>
 
@@ -130,7 +162,7 @@ body {
 </div>
 
 <!-- ANDROID -->
-<div class="section">
+<div class="section fade">
 <h2>🤖 Android Games</h2>
 <div class="grid">
 
@@ -153,7 +185,7 @@ body {
 </div>
 
 <!-- AMAZON -->
-<div class="section">
+<div class="section fade">
 <h2>🛒 Amazon Games</h2>
 <div class="grid">
 
@@ -173,8 +205,6 @@ body {
 </div>
 
 </div>
-</div>
-
 </div>
 
 </body>
