@@ -176,11 +176,30 @@ nav {
   margin-bottom: 20px;
 }
 
+/* Enhanced glowing effect for the entire name "KAMRAN MUNIR" */
 .hero h1 span {
   background: linear-gradient(135deg, var(--accent), #a855f7);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 8px rgba(0, 212, 255, 0.4), 0 0 16px rgba(0, 212, 255, 0.2);
+  animation: subtleGlow 3s ease-in-out infinite alternate;
+}
+
+/* Make the whole name line glow subtly */
+.hero h1 {
+  text-shadow: 0 0 12px rgba(0, 212, 255, 0.3);
+  animation: titleGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes titleGlow {
+  0% { text-shadow: 0 0 8px rgba(0, 212, 255, 0.2); }
+  100% { text-shadow: 0 0 20px rgba(0, 212, 255, 0.6), 0 0 5px rgba(168, 85, 247, 0.4); }
+}
+
+@keyframes subtleGlow {
+  0% { text-shadow: 0 0 5px rgba(0, 212, 255, 0.3); opacity: 0.9; }
+  100% { text-shadow: 0 0 18px rgba(0, 212, 255, 0.8), 0 0 6px rgba(168, 85, 247, 0.6); opacity: 1; }
 }
 
 .hero-subtitle {
@@ -687,6 +706,7 @@ footer {
   font-weight: 800;
   color: var(--accent);
   margin-bottom: 8px;
+  text-shadow: 0 0 6px rgba(0, 212, 255, 0.5);
 }
 
 .footer-sub {
@@ -869,7 +889,7 @@ footer {
   <div class="section-header"><div class="section-tag">Career</div><h2>Work Experience</h2><p>3+ years shipping games across Lahore studios.</p></div>
   <div class="timeline">
     <div class="timeline-item"><div class="timeline-dot">🚀</div><div class="timeline-content"><div class="timeline-header"><div class="timeline-title">Unity Developer</div><div class="timeline-dates">Jul '25 — Present</div></div><div class="timeline-company">Game Chaser Studio · Lahore</div><ul class="timeline-bullets"><li>Published hyper-casual, FPS & simulation games (Unity 2D/3D)</li><li>AdMob + Firebase analytics & remote config integration</li><li>Amazon Fire TV optimization & TV UI adaptations</li><li>Full iOS/Android build pipelines and store deployments</li></ul><div class="timeline-tags"><span class="t-tag">Unity</span><span class="t-tag">AdMob</span><span class="t-tag">Fire TV</span></div></div></div>
-    <div class="timeline-item"><div class="timeline-dot">🎯</div><div class="timeline-content"><div class="timeline-header"><div class="timeline-title">Unity Developer</div><div class="timeline-dates">Jun '24 — Jul '25</div></div><div class="timeline-company">Smart Pixel Studios · Lahore</div><ul class="timeline-bullets"><li>Shipped multiple cross-genre mobile games (Android/iOS)</li><li>Implemented IAP & rewarded ads monetization</li><li>Titles: BaybayinQuiz, Sprunki Music, Stick Sniper, Car Simulator</li></ul><div class="timeline-tags"><span class="t-tag">IAP</span><span class="t-tag">iOS</span><span class="t-tag">Android</span></div></div></div>
+    <div class="timeline-item"><div class="timeline-dot">🎯</div><div class="timeline-content"><div class="timeline-header"><div class="timeline-title">Unity Developer</div><div class="timeline-dates">Jun '24 — Jul '25</div></div><div class="timeline-company">Smart Pixel Studios · Lahore</div><ul class="timeline-bullets"><li>Shipped multiple cross-genre mobile games (Android/iOS)</li><li>Implemented IAP & rewarded ads monetization</li><li>Key titles: BaybayinQuiz, Sprunki Music, Stick Sniper, Car Simulator</li></ul><div class="timeline-tags"><span class="t-tag">IAP</span><span class="t-tag">iOS</span><span class="t-tag">Android</span></div></div></div>
     <div class="timeline-item"><div class="timeline-dot">🎮</div><div class="timeline-content"><div class="timeline-header"><div class="timeline-title">Unity 3D Developer</div><div class="timeline-dates">Jan '22 — Jun '24</div></div><div class="timeline-company">Game Circle · Lahore</div><ul class="timeline-bullets"><li>Developed 3D games from concept to release</li><li>Wrote modular C# scripts & optimized performance</li><li>Key titles: Army Vehicle Transport, Speed Boat Racing</li></ul><div class="timeline-tags"><span class="t-tag">Unity 3D</span><span class="t-tag">Optimization</span></div></div></div>
   </div>
 </section>
@@ -909,15 +929,22 @@ footer {
     particlesDiv.appendChild(p);
   }
   
-  // ----- GAME DATA (full iOS + updated Android + Amazon) -----
+  // ----- GAME DATA (original + new iOS games added, all existing games preserved) -----
   const gamesData = {
     ios: [
+      // existing original iOS games
       { name: "Water Fun Park Manager 3D", icon: "https://wsrv.nl/?url=https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/f4/43/fd/f443fd0c-f523-914a-dbe3-e7d5fbf4c26f/AppIcon-1x_U007emarketing-0-8-0-85-220-0.png/400x400ia-75.webp&w=200&h=200&fit=cover", url: "https://apps.apple.com/hu/app/water-fun-park-manager-3d/id6753354884" },
       { name: "FPS Fire Survival Shooter Gun", icon: "https://wsrv.nl/?url=https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/57/4a/39/574a398d-7c11-45b5-756f-3d054d1e52e5/AppIcon-1x_U007emarketing-0-8-0-85-220-0.png/400x400ia-75.webp&w=200&h=200&fit=cover", url: "https://apps.apple.com/hu/app/fps-fire-survival-shooter-gun/id6749795186" },
       { name: "Kite Shop Manager Simulator", icon: "https://wsrv.nl/?url=https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/7f/e8/d2/7fe8d2ac-1dd5-54d5-fb2e-e93bcabe7f21/AppIcon-1x_U007emarketing-0-8-0-85-220-0.png/400x400ia-75.webp&w=200&h=200&fit=cover", url: "https://apps.apple.com/hu/app/kite-shop-manager-simulator/id6758148786" },
       { name: "Mall Manager Simulator", icon: "https://wsrv.nl/?url=https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/1e/1b/e0/1e1be085-afd5-2c45-6cde-5a712872c522/AppIcon-1x_U007emarketing-0-8-0-85-220-0.png/400x400ia-75.webp&w=200&h=200&fit=cover", url: "https://apps.apple.com/pk/app/mall-manager-simulator/id6755783425" },
       { name: "Commando Gun Shooting Game", icon: "https://wsrv.nl/?url=https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/c8/3f/72/c83f725f-17d2-16fe-7c92-de5557b13aaa/Placeholder.mill/400x400bb-75.webp&w=200&h=200&fit=cover", url: "https://apps.apple.com/pk/app/commando-gun-shooting-game/id6755783480" },
-      { name: "Book Store Manager", icon: "https://wsrv.nl/?url=https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/77/17/fb/7717fbd2-587d-d3f4-764d-fb975303be6d/AppIcon-1x_U007emarketing-0-8-0-85-220-0.png/400x400ia-75.webp&w=200&h=200&fit=cover", url: "https://apps.apple.com/pk/app/book-store-manager-simulator/id6755783706" }
+      { name: "Book Store Manager", icon: "https://wsrv.nl/?url=https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/77/17/fb/7717fbd2-587d-d3f4-764d-fb975303be6d/AppIcon-1x_U007emarketing-0-8-0-85-220-0.png/400x400ia-75.webp&w=200&h=200&fit=cover", url: "https://apps.apple.com/pk/app/book-store-manager-simulator/id6755783706" },
+      // NEW ADDED iOS GAMES (as requested, appended without removal)
+      { name: "Clean Up Games: Deep Clean 3D", icon: "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/82/a3/eb/82a3eb8f-345a-e31c-31be-57ae53a028e1/AppIcon-1x_U007emarketing-0-7-0-85-220-0.png/400x400ia-75.webp", url: "https://apps.apple.com/us/app/clean-up-games-deep-clean-3d/id6499127037" },
+      { name: "Weapon Master Gun Shooter 3D", icon: "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/33/18/3f/33183f72-79cf-9b01-c8f2-24d7ea68e342/AppIcon-1x_U007emarketing-0-7-0-85-220-0.png/400x400ia-75.webp", url: "https://apps.apple.com/us/app/weapon-master-gun-shooter-3d/id6479244669" },
+      { name: "Super Slow Mo Ninja Run", icon: "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/df/0e/d2/df0ed2ad-34bc-30ab-682d-929c048484b1/AppIcon-0-0-1x_U007emarketing-0-7-0-85-220.png/400x400ia-75.webp", url: "https://apps.apple.com/us/app/super-slow-mo-ninja-run/id6602889669" },
+      { name: "Gorilla Run Bigfoot Runner", icon: "https://is1-ssl.mzstatic.com/image/thumb/Purple112/v4/77/87/fc/7787fc29-042a-d244-a14b-9a1062781240/AppIcon-1x_U007emarketing-0-7-0-85-220-0.png/400x400ia-75.webp", url: "https://apps.apple.com/us/app/gorilla-run-bigfoot-runner/id6477427083" },
+      { name: "Mega Shopping Outlet Rush", icon: "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/7c/47/36/7c4736d9-d1d6-7975-ff1d-a25cd0e0b969/AppIcon-1x_U007emarketing-0-7-0-85-220-0.png/400x400ia-75.webp", url: "https://apps.apple.com/us/app/mega-shopping-outlet-rush/id6476973170" }
     ],
     android: [
       { name: "Tile Triple Puzzle Match", icon: "https://play-lh.googleusercontent.com/1Sf3V_dowPrMNV4k8u_A7rGIB79J6ml4f0ZqwDcyIM5mFsNYrwCGR4nhjcUAeNFbGs3GhnFzd68AF8e2rFDaMA=w480-h960-rw", url: "https://play.google.com/store/apps/details?id=com.tile.triple.puzzle.match.game" },
