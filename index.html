@@ -440,6 +440,12 @@ nav {
   margin-bottom: 8px;
   color: #f1f5f9;
   min-height: 2.6rem;
+  text-shadow: 0 0 3px rgba(0, 212, 255, 0.3), 0 0 6px rgba(0, 212, 255, 0.2);
+  transition: text-shadow 0.2s ease;
+}
+
+.game-card:hover .game-card-name {
+  text-shadow: 0 0 5px rgba(0, 212, 255, 0.6), 0 0 8px rgba(0, 212, 255, 0.4);
 }
 
 .game-card-platform {
@@ -829,7 +835,7 @@ footer {
     <button class="tab-btn" data-platform="amazon">📦 Amazon</button>
   </div>
   
-  <!-- iOS content (abbreviated but fully functional) -->
+  <!-- iOS content -->
   <div class="platform-section active" id="platform-ios">
     <div class="games-grid" id="iosGrid"></div>
   </div>
@@ -903,7 +909,7 @@ footer {
     particlesDiv.appendChild(p);
   }
   
-  // ----- GAME DATA (ensuring all platform data) -----
+  // ----- GAME DATA (full iOS + updated Android + Amazon) -----
   const gamesData = {
     ios: [
       { name: "Water Fun Park Manager 3D", icon: "https://wsrv.nl/?url=https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/f4/43/fd/f443fd0c-f523-914a-dbe3-e7d5fbf4c26f/AppIcon-1x_U007emarketing-0-8-0-85-220-0.png/400x400ia-75.webp&w=200&h=200&fit=cover", url: "https://apps.apple.com/hu/app/water-fun-park-manager-3d/id6753354884" },
@@ -918,7 +924,12 @@ footer {
       { name: "Thief Robbery Stealth", icon: "https://play-lh.googleusercontent.com/YDTa408N7OcwhmHc55aGjEokTdB8-c5qLcl-2jup_EkUPRbP5xUh85i9yF4K-d_W0cA=w480-h960-rw", url: "https://play.google.com/store/apps/details?id=com.gc.thief.robbery.stealth.sneak.game" },
       { name: "FPS Fire Battleground", icon: "https://play-lh.googleusercontent.com/5j9xb6UDyXDHSBuRfVB1hKvPuMJfhfGWYh5dliK7RVW-jaEHQ5o_UJLaXaimswHA6sQ=w480-h960-rw", url: "https://play.google.com/store/apps/details?id=com.gc.fps.fire.battleground.survival.shooter" },
       { name: "Mother Simulator Baby Care", icon: "https://play-lh.googleusercontent.com/dO9HiS1chT2sdT-N0RS7aT4COtEaxfHG6BcinEDr4Mbmcbs6bqoYez9DHqs_P-WaBGD9QRppMEyvenitTmtyLsU=w480-h960-rw", url: "https://play.google.com/store/apps/details?id=com.gc.mothersimulator.baby.family.care.life" },
-      { name: "Agent Boom Hero", icon: "https://play-lh.googleusercontent.com/Bn9599TE0iCkMQPEDAFa_GiHtFIEIy9tie4dznnYY9mZGnd9dC9y6teTil4F6ayOz5buCvDbeR635WCTRAzHyw=w480-h960-rw", url: "https://play.google.com/store/apps/details?id=com.gc.agent.boom.hero.survivorio.shooter" }
+      { name: "Agent Boom Hero", icon: "https://play-lh.googleusercontent.com/Bn9599TE0iCkMQPEDAFa_GiHtFIEIy9tie4dznnYY9mZGnd9dC9y6teTil4F6ayOz5buCvDbeR635WCTRAzHyw=w480-h960-rw", url: "https://play.google.com/store/apps/details?id=com.gc.agent.boom.hero.survivorio.shooter" },
+      { name: "Gun Fire Shooting Game", icon: "https://play-lh.googleusercontent.com/wxP15xOVX5PrMKmkIwD9Z_m8om8na35FASbARS2wvc4RoAe7XHPvQauEQ0h1n7luj8rPKv4LLUxivXrdH9jO3g=w480-h960-rw", url: "https://play.google.com/store/apps/details?id=com.gun.fire.shooting.game" },
+      { name: "Shoot Gun Shooting Game", icon: "https://play-lh.googleusercontent.com/sZqPNov7t68cPhYLIY_CBeU3cnvFoBQh5xphPs44ZDJkEWsh0ifSOU1e_uCtxf0Zc4Hp9YXpOwUSK9xAKr3p9w=w480-h960-rw", url: "https://play.google.com/store/apps/details?id=com.shoot.gun.shooting.game" },
+      { name: "Sponge Boy Bob Superhero", icon: "https://play-lh.googleusercontent.com/9RPtEbG1MHgPvQ7OwZzQdnpUlVNzjoFvhvOereMXEh057-mBus5BLN8cmUrA7cee_4U=w480-h960-rw", url: "https://play.google.com/store/apps/details?id=com.sdg.sponge.boy.bob.superhero.game" },
+      { name: "Ragdoll Game Kick", icon: "https://play-lh.googleusercontent.com/mY7XfAiPQNz4NKfCw8qWKOwQ66Gyf9cmKyCSbTHvU7lqSAcSEpBIeA-y6Ugrj104REMcGSDgVenCrw4jHex-NZ8=w480-h960-rw", url: "https://play.google.com/store/apps/details?id=com.gt.ragdoll.game.kick.gamesa" },
+      { name: "Car Driving Racing Sim", icon: "https://play-lh.googleusercontent.com/Nl6hb811Lc1z3PGXQwmQdEwIMurX1clWn8gso_oHVb5R8PkTD9xYVuR_uh8_8CINcbk=w480-h960-rw", url: "https://play.google.com/store/apps/details?id=com.sgd.car.driving.racing.simulator" }
     ],
     amazon: [
       { name: "Offroad 4x4 Driving", icon: "https://m.media-amazon.com/images/I/81wA8PQKp9L.png", url: "https://www.amazon.com/offroad-4x4-driving-simulator-truck/dp/B0FX4GDWXM" },
@@ -952,7 +963,7 @@ footer {
   renderGames('android', 'androidGrid');
   renderGames('amazon', 'amazonGrid');
   
-  // TAB SWITCHING (FIXED)
+  // TAB SWITCHING
   const tabs = document.querySelectorAll('.tab-btn');
   const sections = {
     ios: document.getElementById('platform-ios'),
